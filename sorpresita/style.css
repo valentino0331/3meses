@@ -1,0 +1,653 @@
+/* Estilos Base y Reseteo */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #fff;
+    background-color: #000;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* === Ventana Modal de Login === */
+.login-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.login-card {
+    background: rgba(26, 26, 26, 0.8);
+    padding: 3rem 2rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    animation: fadeIn 1s ease-in-out;
+}
+
+.login-card h1 {
+    color: #e50914;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.login-card p {
+    font-size: 1.1rem;
+    color: #ccc;
+}
+
+.login-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.login-card input {
+    background: #333;
+    border: 1px solid #555;
+    color: #fff;
+    padding: 12px;
+    border-radius: 5px;
+    width: 280px;
+    transition: border-color 0.3s ease;
+}
+
+.login-card input:focus {
+    outline: none;
+    border-color: #e50914;
+}
+
+.login-card .cta-button {
+    margin-top: 10px;
+}
+
+.login-card .hint {
+    font-size: 0.8rem;
+    color: #999;
+    margin-top: 15px;
+}
+
+.login-card .error {
+    color: #ffcc00;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Header */
+.header {
+    background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+    padding: 1rem 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    color: #e50914;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.logo span {
+    color: #fff;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.nav {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav a:hover {
+    color: #e50914;
+}
+
+.nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #e50914;
+    transition: width 0.3s ease;
+}
+
+.nav a:hover::after {
+    width: 100%;
+}
+
+/* === Hero Section (con video de fondo) === */
+.hero {
+    position: relative; /* Importante para posicionar el video y el overlay */
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    text-align: center;
+    color: #fff;
+    margin-top: 80px;
+    overflow: hidden; /* Asegura que el video no se salga de la sección */
+}
+
+.hero-video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que el video cubra todo el espacio sin distorsionarse */
+    z-index: -2; /* Envía el video al fondo */
+}
+
+/* Overlay oscuro para mejorar la legibilidad del texto sobre el video */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Color y opacidad del overlay */
+    z-index: -1; /* Estará entre el video y el contenido */
+}
+
+.hero-content {
+    position: relative; /* Asegura que el contenido esté por encima del overlay */
+    z-index: 1; /* Pone el contenido encima del overlay */
+}
+
+.hero-content h2 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-button {
+    background: linear-gradient(45deg, #e50914, #ff1e2d);
+    color: #fff;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.cta-button:hover {
+    background: linear-gradient(45deg, #ff1e2d, #e50914);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(229, 9, 20, 0.4);
+}
+
+/* === Galería de Fotos - Carrusel === */
+.carousel-section {
+    padding: 4rem 0;
+    background: #111;
+}
+
+.carousel-section h3 {
+    color: #fff;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    font-weight: bold;
+}
+
+.carousel-container {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.carousel-wrapper {
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.movie-card {
+    flex: 0 0 25%; /* Muestra 4 tarjetas a la vez (100% / 4) */
+    padding: 0 10px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.movie-card:hover {
+    transform: scale(1.05);
+}
+
+.movie-card img, .movie-card video {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.movie-info {
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    right: 10px;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+    color: #fff;
+    padding: 20px;
+    border-radius: 0 0 10px 10px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.movie-card:hover .movie-info {
+    transform: translateY(0);
+}
+
+.movie-info h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.platform {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.platform.netflix { background: #e50914; }
+.platform.disney { background: #113ccf; }
+.platform.hbo { background: #6e38b1; }
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(229, 9, 20, 0.8);
+    color: #fff;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    z-index: 10;
+    opacity: 1; /* Asegura que los botones sean visibles por defecto */
+}
+
+.carousel-btn:hover {
+    background: #e50914;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-btn.prev { left: -25px; }
+.carousel-btn.next { right: -25px; }
+
+/* Estilo para botones deshabilitados */
+.carousel-btn.disabled {
+    opacity: 0.3; /* Los hace semitransparentes */
+    cursor: not-allowed; /* Cambia el cursor para indicar que no se pueden usar */
+    pointer-events: none; /* Asegura que no se pueda hacer clic */
+}
+
+
+/* === Mensajes Especiales (Estilo de Planes) === */
+.plans-section {
+    padding: 4rem 0;
+    background: #1a1a1a;
+}
+
+.plans-section h3 {
+    color: #fff;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    font-weight: bold;
+}
+
+.plans-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.plan-card {
+    background: #222;
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.plan-card:hover {
+    transform: translateY(-10px);
+    border-color: #e50914;
+    box-shadow: 0 10px 30px rgba(229, 9, 20, 0.3);
+}
+
+.plan-header {
+    margin-bottom: 1.5rem;
+}
+
+.plan-header i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.plan-card:hover .plan-header i {
+    transform: scale(1.2);
+}
+
+.plan-header h4 {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.plan-header.netflix i { color: #e50914; }
+.plan-header.disney i { color: #113ccf; }
+.plan-header.hbo i { color: #6e38b1; }
+.plan-header.prime i { color: #00a8e1; }
+.plan-header.crunchyroll i { color: #f78c00; }
+.plan-header.YouTube i { color: #ff0000; }
+
+.plan-features {
+    flex-grow: 1;
+}
+
+.plan-features ul {
+    list-style: none;
+    color: #ccc;
+    margin-bottom: 2rem;
+}
+
+.plan-features li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #333;
+}
+
+.plan-features li:last-child {
+    border-bottom: none;
+}
+
+.plan-features li::before {
+    content: '✓';
+    color: #e50914;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.plan-button {
+    background: linear-gradient(45deg, #e50914, #ff1e2d);
+    color: #fff;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: auto;
+}
+
+.plan-button:hover {
+    background: linear-gradient(45deg, #ff1e2d, #e50914);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(229, 9, 20, 0.4);
+}
+
+/* === Contacto (Estilo de Contacto) === */
+.contact-section {
+    padding: 4rem 0;
+    background: #000;
+}
+
+.contact-section h3 {
+    color: #fff;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    font-weight: bold;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.contact-info h4 {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    font-weight: bold;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    color: #ccc;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.contact-item i {
+    color: #e50914;
+    font-size: 1.3rem;
+    margin-right: 1rem;
+    width: 30px;
+}
+
+.contact-form {
+    background: #1a1a1a;
+    padding: 2rem;
+    border-radius: 15px;
+    border: 1px solid #333;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #444;
+    border-radius: 8px;
+    background: #333;
+    color: #fff;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #e50914;
+    box-shadow: 0 0 0 2px rgba(229, 9, 20, 0.2);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #999;
+}
+
+.submit-button {
+    background: linear-gradient(45deg, #e50914, #ff1e2d);
+    color: #fff;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    width: 100%;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.submit-button:hover {
+    background: linear-gradient(45deg, #ff1e2d, #e50914);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(229, 9, 20, 0.4);
+}
+
+/* === Footer === */
+.footer {
+    background: #000;
+    padding: 3rem 0 1rem;
+    border-top: 1px solid #333;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid #333;
+    color: #999;
+}
+
+/* === Responsive Design === */
+@media (max-width: 768px) {
+    .header .container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav {
+        gap: 1rem;
+    }
+
+    .hero-content h2 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+
+    .carousel-track {
+        transform: translateX(0) !important;
+        flex-wrap: wrap;
+    }
+
+    .movie-card {
+        flex: 0 0 100%;
+    }
+
+    /* Hemos eliminado la línea que ocultaba .carousel-btn aquí */
+
+    .plans-grid,
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .login-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .login-card input,
+    .login-card .cta-button {
+        width: 100%;
+    }
+}
+
+/* === Animaciones === */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.plan-card, .movie-card {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Nuevo estilo para ocultar la ventana modal */
+.modal-hidden {
+    display: none;
+}

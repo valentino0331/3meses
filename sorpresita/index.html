@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para mi Bee ❤️</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div id="main-content">
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>Bee & Vale ❤️</h1>
+                <span>Nuestra Historia</span>
+            </div>
+            <nav class="nav">
+                <a href="#hero-section">Inicio</a>
+                <a href="#gallery-section">Momentos</a>
+                <a href="#messages-section">Mensajes</a>
+            </nav>
+        </div>
+    </header>
+
+      <section id="hero-section" class="hero">
+          <video autoplay loop muted playsinline class="hero-video-background">
+          <source src="videos/hola.mp4" type="video/mp4">
+          Tu navegador no soporta la reproducción de videos.
+          </video>
+            <div class="container hero-content">
+            <h2>3 Meses de Pura Magia ✨</h2>
+            <p>Desde el día que nos encontramos, mi mundo cambió. Cada momento contigo es mi película favorita.</p>
+            <a href="#gallery-section" class="cta-button">Ver Nuestros Recuerdos</a>
+        </div>
+    </section>
+    <section id="gallery-section" class="carousel-section">
+        <div class="container">
+            <h3>📸 Nuestros Momentos Favoritos</h3>
+            <div class="carousel-container">
+                <div class="carousel-wrapper">
+                    <div class="carousel-track">
+                        </div>
+                </div>
+                <button class="carousel-btn prev"><i class="fas fa-chevron-left"></i></button>
+                <button class="carousel-btn next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+    
+    <section id="messages-section" class="plans-section">
+        <div class="container">
+            <h3>💌 Mensajes Para Ti</h3>
+            <div class="plans-grid">
+                <div class="plan-card">
+                    <div class="plan-header netflix">
+                        <i class="fas fa-heart"></i>
+                        <h4>Para mi amor, Bee</h4>
+                    </div>
+                    <div class="plan-features">
+                        <ul>
+                            <li>Eres mi compañera de vida.</li>
+                            <li>Mi más grande apoyo.</li>
+                            <li>La razón de mi sonrisa.</li>
+                        </ul>
+                    </div>
+                    <a href="#" class="plan-button">Te Amo Mucho ❤️</a>
+                </div>
+                <div class="plan-card">
+                    <div class="plan-header disney">
+                        <i class="fas fa-magic"></i>
+                        <h4>Nuestra Magia</h4>
+                    </div>
+                    <div class="plan-features">
+                        <ul>
+                            <li>Cada día es una aventura.</li>
+                            <li>A tu lado, todo es posible.</li>
+                            <li>Creas un mundo de fantasía a mi alrededor.</li>
+                        </ul>
+                    </div>
+                    <a href="#" class="plan-button">Por Siempre Juntos 💍</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <div class="container">
+            <h3>Solo para ti, mi amor</h3>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h4>Con todo mi amor, Vale</h4>
+                    <p class="contact-item"><i class="fas fa-calendar-alt"></i> Nuestro Aniversario: 30 de Mayo</p>
+                    <p class="contact-item"><i class="fas fa-clock"></i> 3 meses inolvidables</p>
+                    <p class="contact-item"><i class="fas fa-star"></i> Eres mi todo, mi estrella</p>
+                </div>
+                <div class="contact-form">
+                    <p>Déjame un mensaje especial aquí, mi amor:</p>
+                    <form action="#">
+                        <div class="form-group">
+                            <textarea id="message-to-vale" rows="5" placeholder="Escribe tu mensaje..."></textarea>
+                        </div>
+                        <button type="submit" class="submit-button">Enviar Mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 Bee & Vale. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<div id="login-modal" class="login-modal">
+    <div class="login-card">
+        <h1>Siempre Juntos ❤️</h1>
+        <p>Ingresa para ver nuestra historia de amor</p>
+        <form id="login-form">
+            <input type="text" id="username" placeholder="Usuario">
+            <input type="password" id="password" placeholder="Contraseña">
+            <button type="submit" class="cta-button">Entrar</button>
+        </form>
+        <p class="hint">Pista: usuario **siemprejuntos**, contraseña: nuestra fecha más especial 💘</p>
+        <p id="error-message" class="error hidden">Usuario o contraseña incorrectos. Inténtalo de nuevo.</p>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
